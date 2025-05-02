@@ -1,0 +1,219 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.result {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 15px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+  
+/* #mineee */
+
+/* body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+/* Background Image and Effects */
+/* body {
+    background: url("images/login1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+} */
+
+
+/* Dark overlay
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1;
+} */
+
+/* Main content styling */
+/* h1 {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+} */
+
+/* Result Card */
+/* .result {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    margin: 20px auto;
+    padding: 30px;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 2;
+} */
+
+/* Basic Reset */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background image */
+body {
+    background: url("../images/login1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Dark overlay for background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none; /* Allow interaction with content behind it */
+}
+
+/* Heading Styling */
+h1 {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+}
+
+/* Result Cards */
+.result, .card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    margin: 20px auto;
+    padding: 30px;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 2;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background-color: #e53935;
+    color: white;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+/* Offcanvas Sidebar Styling */
+.offcanvas {
+    z-index: 1200 !important; /* Ensure offcanvas is at the top */
+}
+
+/* Side Navigation Menu Styling */
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-nav ul li {
+    padding: 15px 20px;
+}
+
+.side-nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    display: block;
+}
+
+.side-nav ul li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 6px;
+}
+
+/* Layout Container */
+.layout {
+    display: flex;
+    margin-top: 70px; /* Push content below top nav */
+}
+
+/* Offcanvas body inside sidebar */
+.offcanvas-body {
+   
+    padding: 0;
+}
+
+/* Offcanvas Sidebar */
+.offcanvas-start {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.514);
+
+    background-color: rgba(245, 245, 245, 0.596);
+    position: fixed;
+    top: 56px; /* Matches Bootstrap navbar height */
+    left: 0;
+    height: calc(100% - 56px);
+    z-index: 1200;
+    width: 250px;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+    border-right: 1px solid #ddd;
+}
+
+
+/* Side Navigation Links (Optional, if you want links to have specific style) */
+.nav-link {
+    font-weight: 600;
+    color: #333;
+    padding: 12px 20px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #9f9b9b;
+    color: white;
+}
+
+
+/* Responsive offcanvas for mobile view (toggleable sidebar) */
+@media (max-width: 768px) {
+    .offcanvas-start {
+        width: 80%;
+    }
+}
+
+

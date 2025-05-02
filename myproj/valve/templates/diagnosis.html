@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Results</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+    <style>
+        .offcanvas {
+            z-index: 1060 !important;
+        }
+
+        body {
+            padding-top: 0px;
+        }
+    </style>
+</head>
+<script>
+    document.getElementById("diagnosisForm").addEventListener("submit", function() {
+        document.getElementById("diagnoseBtn").disabled = true;
+        document.getElementById("loadingSpinner").style.display = "inline-block";
+    });
+    </script>
+    
+<body>
+
+   <!-- Top Navbar
+<nav class="navbar navbar-dark bg-danger px-3">
+    <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+        ☰
+    </button>
+    
+    <span class="navbar-brand mb-0 h1">HOME | LOGOUT</span>
+</nav> -->
+
+<!-- Sidebar using Bootstrap Offcanvas -->
+<!-- <div class="offcanvas offcanvas-start bg-light" tabindex="-1" id="sidebar">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="px-3 mb-3">
+            <h5 class="text-primary fw-bold">🩺 MedDetect</h5>
+       <hr>
+       </div>
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Diagnosis</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Patients</a></li>
+            <li class="nav-item"><a class="nav-link text-danger" href="">Logout</a></li>
+        </ul>
+    </div>
+</div> -->
+
+<!-- Run and Diagnose Button -->
+<div class="text-center my-4">
+    <form method="post" action="{% url 'run_diagnosis' %}" id="diagnosisForm">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary" id="diagnoseBtn">
+            🔍 Run and Diagnose
+        </button>
+    </form>
+    <div class="spinner-border text-primary mt-3" role="status" id="loadingSpinner" style="display:none;">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+</div>
+
+
+    <h1>Diagnosis Results</h1>
+    <div class="diagnosis">
+        {% for result in diagnosis %}
+            <div class="result">
+                <h2>File: {{ result.file }}</h2>
+                <p class="disease-name">Disease Name: <strong>{{ result.disease_name }}</strong></p>
+                <p class="remarks">Remarks: <strong>{{ result.remarks }}</strong></p>
+            </div>
+        {% endfor %}
+    </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
